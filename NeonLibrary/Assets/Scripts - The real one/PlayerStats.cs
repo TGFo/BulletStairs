@@ -1,0 +1,31 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerStats : MonoBehaviour
+{
+    public float health;
+    public float fireRate;
+    public BulletSpawner spawner;
+    public int food;
+    public int water;
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        spawner.timer += Time.deltaTime;
+        if (spawner.timer >= spawner.firingRate)
+        {
+            spawner.timer = 0;
+            if (Input.GetMouseButton(0))
+            {
+                spawner.Fire();
+            }
+        }
+    }
+}
