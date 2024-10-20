@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Security;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -21,6 +22,14 @@ public class PlayerMovement : MonoBehaviour
         // Get the input from the player (WASD or Arrow Keys)
         movement.x = Input.GetAxisRaw("Horizontal");  // Input on the X-axis (left/right)
         movement.y = Input.GetAxisRaw("Vertical");    // Input on the Y-axis (up/down)
+        if (movement.x < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else if (movement.x > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
     }
 
     void FixedUpdate()
