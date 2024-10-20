@@ -8,10 +8,13 @@ using UnityEngine;
 
 public class BulletSpawner : MonoBehaviour
 {
+    public Weapon currentWeapon;
+
     enum SpawnerType { Straight, Spin }
     public Rigidbody2D rb;
     public float speedMult = 10;
     public bool worldSpawner = true;
+    public bool useWeaponForStats;
     [Header("Bullet Attributes")]
     public GameObject bullet;
     public float bulletLife = 1f;
@@ -28,14 +31,18 @@ public class BulletSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if(!worldSpawner)return;
+        if (useWeaponForStats)
+        {
+            speed = currentWeapon.projectileSpeed;
+            firingRate = currentWeapon.fireRate;
+        }
+        if (!worldSpawner)return;
         timer += Time.deltaTime;
         if (spawnerType == SpawnerType.Spin) transform.eulerAngles = new Vector3(0f, 0f, transform.eulerAngles.z + 1f);
         if (timer >= firingRate)

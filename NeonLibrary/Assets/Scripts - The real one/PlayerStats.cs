@@ -9,10 +9,11 @@ public class PlayerStats : MonoBehaviour
     public BulletSpawner spawner;
     public int food;
     public int water;
+    public Weapon currentWeapon;
     // Start is called before the first frame update
     void Start()
     {
-        
+        spawner.currentWeapon = currentWeapon;
     }
 
     // Update is called once per frame

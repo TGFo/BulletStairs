@@ -95,9 +95,10 @@ GameObject:
   - component: {fileID: 2541307546483372521}
   - component: {fileID: 2513377223780830410}
   - component: {fileID: 5011921740518341477}
+  - component: {fileID: 3417268369174926883}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,6 +160,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 125
+  animator: {fileID: 2451795656884856101}
+--- !u!61 &3417268369174926883
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5558921065505914135}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.81}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.54, y: 4.41}
+  m_EdgeRadius: 0
 --- !u!1 &6995451941756040014
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +218,7 @@ GameObject:
   - component: {fileID: 2451795656884856101}
   - component: {fileID: 2441976943131163321}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -317,6 +364,7 @@ MonoBehaviour:
   spawner: {fileID: 6905447061195596737}
   food: 0
   water: 0
+  currentWeapon: {fileID: 0}
 --- !u!114 &6873271807690295617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,9 +389,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 067f51caeea55884c9b63d5ac43d78a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentWeapon: {fileID: 0}
   rb: {fileID: 2513377223780830410}
   speedMult: 1
   worldSpawner: 0
+  useWeaponForStats: 0
   bullet: {fileID: 8209927730957922593, guid: 878354aa718081144813b9b21853c060, type: 3}
   bulletLife: 1
   speed: 100

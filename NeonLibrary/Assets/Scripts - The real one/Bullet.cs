@@ -42,7 +42,8 @@ public class Bullet : MonoBehaviour
     }
     public void OnBulletFired()
     {
-        rb.AddForce(speed * (Vector2)transform.right * playerSpeed.magnitude);
+        if(playerSpeed.magnitude >= 13)rb.AddForce(speed * (Vector2)transform.right * playerSpeed.magnitude);
+        else rb.AddForce(speed * (Vector2)transform.right * 10);
         Debug.Log(playerSpeed);
     }
 }

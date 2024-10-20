@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 movement;
+    public Animator animator;
 
     void Start()
     {
@@ -26,6 +27,13 @@ public class PlayerMovement : MonoBehaviour
     {
         // Apply the movement to the Rigidbody2D
         rb.AddForce(movement * moveSpeed);
+        if(rb.velocity.magnitude >= 5 )
+        {
+            animator.SetBool("isMoving", true);
+        }else
+        {
+            animator.SetBool("isMoving", false);
+        }
         //rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 }

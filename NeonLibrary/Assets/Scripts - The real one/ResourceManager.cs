@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
 {
+    public int globalCash;
     public int globalFood;
     public int globalWater;
+    public int carriedFood;
+    public int carriedWater;
+    public Weapon carriedWeapon;
+    public List<Weapon> AvailableWeapons = new List<Weapon>();
     public static ResourceManager instance;
     private void Awake()
     {
