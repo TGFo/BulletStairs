@@ -38,10 +38,11 @@ public class PlayerManager : MonoBehaviour
     }
     public void Extract()
     {
-        ResourceManager.instance.globalFood += playerFood;
-        ResourceManager.instance.globalWater += playerWater;
+        ResourceManager.instance.globalFood += playerFood + ResourceManager.instance.carriedFood;
+        ResourceManager.instance.globalWater += playerWater + ResourceManager.instance.carriedWater;
         ResourceManager.instance.globalCash += playerCash;
         ResourceManager.instance.AvailableWeapons.AddRange(HeldWeapons);
+        
     }
     private void OnDisable()
     {

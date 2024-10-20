@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public float health;
+    public float health = 3;
+    public float thirst;
     public float fireRate;
     public BulletSpawner spawner;
     public Weapon currentWeapon;
