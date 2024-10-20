@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RotateTowardsMouse : MonoBehaviour
 {
+    public GameObject gunImage;
     void Update()
     {
         // Get the mouse position in world space
@@ -20,5 +21,13 @@ public class RotateTowardsMouse : MonoBehaviour
 
         // Apply the rotation to the object, facing the mouse
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
+        if(mousePosition.x < transform.position.x)
+        {
+            gunImage.transform.localScale = new Vector3(1, -1, 1);
+        }
+        if (mousePosition.x > transform.position.x)
+        {
+            gunImage.transform.localScale = new Vector3(1, 1, 1);
+        }
     }
 }

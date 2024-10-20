@@ -35,4 +35,8 @@ public class ResourceManager : MonoBehaviour
     {
         
     }
+    private void OnDisable()
+    {
+        Destroy(gameObject);
+    }
 }

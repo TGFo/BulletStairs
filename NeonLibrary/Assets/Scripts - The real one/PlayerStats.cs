@@ -7,8 +7,6 @@ public class PlayerStats : MonoBehaviour
     public float health;
     public float fireRate;
     public BulletSpawner spawner;
-    public int food;
-    public int water;
     public Weapon currentWeapon;
     // Start is called before the first frame update
     void Start()

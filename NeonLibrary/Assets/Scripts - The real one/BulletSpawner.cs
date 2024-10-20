@@ -37,10 +37,13 @@ public class BulletSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (useWeaponForStats)
-        {
-            speed = currentWeapon.projectileSpeed;
-            firingRate = currentWeapon.fireRate;
+        if(currentWeapon != null)
+        { 
+            if (useWeaponForStats)
+            {
+                speed = currentWeapon.projectileSpeed;
+                firingRate = currentWeapon.fireRate;
+            }
         }
         if (!worldSpawner)return;
         timer += Time.deltaTime;

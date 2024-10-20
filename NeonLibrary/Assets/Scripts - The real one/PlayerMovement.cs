@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
     public Animator animator;
-
+    public float animThresholdSpeed = 1.0f;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();  // Get the Rigidbody2D component attached to the GameObject
@@ -22,11 +22,11 @@ public class PlayerMovement : MonoBehaviour
         // Get the input from the player (WASD or Arrow Keys)
         movement.x = Input.GetAxisRaw("Horizontal");  // Input on the X-axis (left/right)
         movement.y = Input.GetAxisRaw("Vertical");    // Input on the Y-axis (up/down)
-        if (movement.x < 0)
+        if (rb.velocity.x <= -animThresholdSpeed)
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
-        else if (movement.x > 0)
+        else if (rb.velocity.x >= animThresholdSpeed)
         {
             transform.localScale = new Vector3(1, 1, 1);
         }
@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // Apply the movement to the Rigidbody2D
         rb.AddForce(movement * moveSpeed);
-        if(rb.velocity.magnitude >= 5 )
+        if(rb.velocity.magnitude >= animThresholdSpeed )
         {
             animator.SetBool("isMoving", true);
         }else

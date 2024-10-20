@@ -25,13 +25,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3485196934351549230}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 350438769545765668}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &874411028675677723
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38e3852fe3eae1a4c8cf15a911b492cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -133,7 +133,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 7
+  m_LinearDrag: 5
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -161,6 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 125
   animator: {fileID: 2451795656884856101}
+  animThresholdSpeed: 10
 --- !u!61 &3417268369174926883
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -362,8 +363,6 @@ MonoBehaviour:
   health: 0
   fireRate: 0
   spawner: {fileID: 6905447061195596737}
-  food: 0
-  water: 0
   currentWeapon: {fileID: 0}
 --- !u!114 &6873271807690295617
 MonoBehaviour:
@@ -377,6 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b024847e28d4b847b864f286a535acf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunImage: {fileID: 3485196934351549230}
 --- !u!114 &6905447061195596737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,7 +393,7 @@ MonoBehaviour:
   rb: {fileID: 2513377223780830410}
   speedMult: 1
   worldSpawner: 0
-  useWeaponForStats: 0
+  useWeaponForStats: 1
   bullet: {fileID: 8209927730957922593, guid: 878354aa718081144813b9b21853c060, type: 3}
   bulletLife: 1
   speed: 100

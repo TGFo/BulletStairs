@@ -40,6 +40,8 @@ public class PlayerManager : MonoBehaviour
     {
         ResourceManager.instance.globalFood += playerFood;
         ResourceManager.instance.globalWater += playerWater;
+        ResourceManager.instance.globalCash += playerCash;
+        ResourceManager.instance.AvailableWeapons.AddRange(HeldWeapons);
     }
     private void OnDisable()
     {
