@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;  // Reference to the enemy prefab
-
     void Start()
     {
         // Instantiate an instance of the enemy at a certain position and rotation

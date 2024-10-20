@@ -19,6 +19,7 @@ public class BulletSpawner : MonoBehaviour
     public GameObject bullet;
     public float bulletLife = 1f;
     public float speed = 1f;
+    public int damage = 1;
 
 
     [Header("Spawner Attributes")]
@@ -43,6 +44,7 @@ public class BulletSpawner : MonoBehaviour
             {
                 speed = currentWeapon.projectileSpeed;
                 firingRate = currentWeapon.fireRate;
+                damage = currentWeapon.damage;
             }
         }
         if (!worldSpawner)return;
@@ -65,6 +67,7 @@ public class BulletSpawner : MonoBehaviour
             firedBullet = spawnedBullet.GetComponent<Bullet>();
             firedBullet.speed = speed;
             firedBullet.bulletLife = bulletLife;
+            firedBullet.damage = damage;
             spawnedBullet.transform.rotation = transform.rotation;
             firedBullet.playerSpeed = rb.velocity;
             firedBullet.OnBulletFired();

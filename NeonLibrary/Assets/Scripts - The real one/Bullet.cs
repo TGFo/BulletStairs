@@ -15,6 +15,7 @@ public class Bullet : MonoBehaviour
     public Vector2 playerSpeed;
     private Vector2 spawnPoint;
     private float timer = 0f;
+    public int damage;
     
 
 
@@ -55,7 +56,7 @@ public class Bullet : MonoBehaviour
             EnemyStats enemyStats = collision.gameObject.GetComponent<EnemyStats>();
             if(enemyStats != null)
             {
-                enemyStats.TakeDamage(1);
+                enemyStats.TakeDamage(damage);
             }
             
             Destroy(gameObject);

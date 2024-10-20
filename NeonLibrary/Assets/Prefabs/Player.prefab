@@ -369,7 +369,7 @@ MonoBehaviour:
   health: 3
   fireRate: 0
   spawner: {fileID: 6905447061195596737}
-  currentWeapon: {fileID: 0}
+  currentWeapon: {fileID: 11400000, guid: 23a83ce1589f2d549bbce4a73d94653a, type: 2}
 --- !u!114 &6873271807690295617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,6 +403,7 @@ MonoBehaviour:
   bullet: {fileID: 8209927730957922593, guid: 878354aa718081144813b9b21853c060, type: 3}
   bulletLife: 1
   speed: 100
+  damage: 1
   spawnerType: 0
   firingRate: 0.13
   timer: 0

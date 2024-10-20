@@ -9,7 +9,7 @@ public class Weapon : ScriptableObject
     public string description;
     public float fireRate;
     public float projectileSpeed;
-    public float damage;
+    public int damage;
     public float value;
     public GameObject bulletSprite;
 }
