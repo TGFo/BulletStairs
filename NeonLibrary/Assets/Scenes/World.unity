@@ -262,7 +262,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Water\nIncreases time you are able \nto spend searching"
+  m_text: "Water\nThe amount of water dictates \nhow long before you die of thirst"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bc75b5d3df919ec42a5b3ffc668ca3d4, type: 2}
   m_sharedMaterial: {fileID: -4407035955560652794, guid: bc75b5d3df919ec42a5b3ffc668ca3d4, type: 2}
@@ -1190,7 +1190,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: ebe6ff24cac1dd44c8aedead78b5e8c8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3422,7 +3422,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 7ba57f6f0e79c8741a1a7a41003b74d1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3614,7 +3614,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 466.09}
+  m_AnchoredPosition: {x: 0.000061035156, y: 470}
   m_SizeDelta: {x: -0.00048828, y: -932.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1535057932

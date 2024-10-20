@@ -1,0 +1,33 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EnemyStats : MonoBehaviour
+{
+    public int maxHealth = 100;  // Enemy's maximum health
+    public int currentHealth;    // Enemy's current health
+    public int damage = 10;      // Damage the enemy can deal (if relevant)
+
+    void Start()
+    {
+        currentHealth = maxHealth;  // Initialize the enemy's health
+    }
+
+    // Function to apply damage to the enemy
+    public void TakeDamage(int amount)
+    {
+        currentHealth -= amount;
+
+        if (currentHealth <= 0)
+        {
+            Die();  // Call the die function if health is 0
+        }
+    }
+
+    // Handle enemy death
+    void Die()
+    {
+        // You can add an explosion effect or some death animation here
+        Destroy(gameObject);  // Destroy the enemy object when it dies
+    }
+}

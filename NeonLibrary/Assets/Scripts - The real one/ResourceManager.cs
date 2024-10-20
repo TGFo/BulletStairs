@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ResourceManager : MonoBehaviour
 {
@@ -35,7 +36,11 @@ public class ResourceManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if( globalFood < 0 || globalWater < 0)
+        {
+            SceneManager.LoadScene("MainMenu");
+            Destroy(gameObject);
+        }
     }
     public void NextDay()
     {

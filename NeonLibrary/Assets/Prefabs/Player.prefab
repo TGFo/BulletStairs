@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 825212267218951851}
   - component: {fileID: 874411028675677723}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 2513377223780830410}
   - component: {fileID: 5011921740518341477}
   - component: {fileID: 3417268369174926883}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &5011921740518341477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,8 +160,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 125
+  dashSpeed: 50
+  dashDuration: 0.5
+  dashCooldown: 3
   animator: {fileID: 2451795656884856101}
   animThresholdSpeed: 10
+  isDashing: 0
+  dashTime: 0
+  dashCooldownTime: 0
 --- !u!61 &3417268369174926883
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -218,7 +224,7 @@ GameObject:
   - component: {fileID: 1543141702739835624}
   - component: {fileID: 2451795656884856101}
   - component: {fileID: 2441976943131163321}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +331,7 @@ GameObject:
   - component: {fileID: 6710257510273690804}
   - component: {fileID: 6873271807690295617}
   - component: {fileID: 6905447061195596737}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerPointer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,7 +366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9080309fab71ef54b8f3546962b65bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 3
   fireRate: 0
   spawner: {fileID: 6905447061195596737}
   currentWeapon: {fileID: 0}

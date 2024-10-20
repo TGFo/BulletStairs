@@ -42,7 +42,8 @@ public class PlayerManager : MonoBehaviour
         ResourceManager.instance.globalWater += playerWater + ResourceManager.instance.carriedWater;
         ResourceManager.instance.globalCash += playerCash;
         ResourceManager.instance.AvailableWeapons.AddRange(HeldWeapons);
-        
+        ResourceManager.instance.NextDay();
+
     }
     private void OnDisable()
     {

@@ -15,6 +15,7 @@ public class Bullet : MonoBehaviour
     public Vector2 playerSpeed;
     private Vector2 spawnPoint;
     private float timer = 0f;
+    
 
 
     // Start is called before the first frame update
@@ -45,5 +46,24 @@ public class Bullet : MonoBehaviour
         if(playerSpeed.magnitude >= 13)rb.AddForce(speed * (Vector2)transform.right * playerSpeed.magnitude);
         else rb.AddForce(speed * (Vector2)transform.right * 10);
         Debug.Log(playerSpeed);
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Check if the bullet hits the player or any object with health
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            EnemyStats enemyStats = collision.gameObject.GetComponent<EnemyStats>();
+            if(enemyStats != null)
+            {
+                enemyStats.TakeDamage(1);
+            }
+            
+            Destroy(gameObject);
+            
+        }
+        else if (collision.gameObject.CompareTag("Wall"))
+        {
+            Destroy(gameObject);  // Destroy the bullet when it hits a wall
+        }
     }
 }
