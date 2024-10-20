@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: NeonLibrary
-  defaultCursor: {fileID: 2800000, guid: 248473a3e364f2a4dafd2f369d052615, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 0bdda00ba5fe86b42aecd479fd1ed7a6, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
@@ -160,7 +160,8 @@ PlayerSettings:
   resetResolutionOnWindowResize: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Standalone: com.DefaultCompany.NeonLibrary
   buildNumber:
     Standalone: 0
     VisionOS: 0

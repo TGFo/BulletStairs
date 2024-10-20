@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
@@ -12,6 +13,7 @@ public class ResourceManager : MonoBehaviour
     public Weapon carriedWeapon;
     public List<Weapon> AvailableWeapons = new List<Weapon>();
     public static ResourceManager instance;
+    public int daysPassed;
     private void Awake()
     {
         if (instance == null)
@@ -34,6 +36,14 @@ public class ResourceManager : MonoBehaviour
     void Update()
     {
         
+    }
+    public void NextDay()
+    {
+  
+        globalFood -= 5;
+        globalWater -= 5;
+        globalCash -= 5;
+        daysPassed++;
     }
     private void OnDisable()
     {
