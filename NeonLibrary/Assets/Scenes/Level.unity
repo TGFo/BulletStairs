@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 19358650}
   - component: {fileID: 19358652}
   - component: {fileID: 19358653}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Square (5)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -483,7 +483,7 @@ GameObject:
   - component: {fileID: 72459430}
   - component: {fileID: 72459432}
   - component: {fileID: 72459433}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Square (3)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -723,7 +723,7 @@ GameObject:
   - component: {fileID: 310172155}
   - component: {fileID: 310172157}
   - component: {fileID: 310172158}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Square (3)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1031,7 +1031,7 @@ GameObject:
   - component: {fileID: 371264510}
   - component: {fileID: 371264512}
   - component: {fileID: 371264513}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Square (3)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1161,7 +1161,7 @@ GameObject:
   - component: {fileID: 453063348}
   - component: {fileID: 453063350}
   - component: {fileID: 453063351}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Square (6)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1291,7 +1291,7 @@ GameObject:
   - component: {fileID: 495440109}
   - component: {fileID: 495440111}
   - component: {fileID: 495440112}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Square (3)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1421,7 +1421,7 @@ GameObject:
   - component: {fileID: 535182384}
   - component: {fileID: 535182386}
   - component: {fileID: 535182387}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Square (5)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1583,7 +1583,7 @@ GameObject:
   - component: {fileID: 665717033}
   - component: {fileID: 665717034}
   - component: {fileID: 665717035}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Door (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1713,7 +1713,7 @@ GameObject:
   - component: {fileID: 666739484}
   - component: {fileID: 666739486}
   - component: {fileID: 666739487}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Square (7)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1843,7 +1843,7 @@ GameObject:
   - component: {fileID: 687626920}
   - component: {fileID: 687626922}
   - component: {fileID: 687626923}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Square (5)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1973,7 +1973,7 @@ GameObject:
   - component: {fileID: 712569474}
   - component: {fileID: 712569476}
   - component: {fileID: 712569477}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Square (2)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -2386,7 +2386,7 @@ GameObject:
   - component: {fileID: 874019101}
   - component: {fileID: 874019103}
   - component: {fileID: 874019104}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Square (6)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -2516,7 +2516,7 @@ GameObject:
   - component: {fileID: 889371906}
   - component: {fileID: 889371908}
   - component: {fileID: 889371909}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Square (6)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -2729,7 +2729,7 @@ GameObject:
   - component: {fileID: 998613396}
   - component: {fileID: 998613397}
   - component: {fileID: 998613398}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Door (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3180,7 +3180,7 @@ GameObject:
   - component: {fileID: 1038974108}
   - component: {fileID: 1038974110}
   - component: {fileID: 1038974111}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Square (7)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -3341,7 +3341,7 @@ GameObject:
   - component: {fileID: 1156853533}
   - component: {fileID: 1156853532}
   - component: {fileID: 1156853534}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Square (2)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -3771,7 +3771,7 @@ GameObject:
   - component: {fileID: 1288328220}
   - component: {fileID: 1288328222}
   - component: {fileID: 1288328223}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Square (8)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -4075,7 +4075,7 @@ GameObject:
   - component: {fileID: 1599862107}
   - component: {fileID: 1599862109}
   - component: {fileID: 1599862110}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Square (4)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -4280,7 +4280,7 @@ GameObject:
   - component: {fileID: 1643586515}
   - component: {fileID: 1643586516}
   - component: {fileID: 1643586517}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Door (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4674,7 +4674,7 @@ GameObject:
   - component: {fileID: 1667046486}
   - component: {fileID: 1667046488}
   - component: {fileID: 1667046489}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Square (7)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -5071,7 +5071,7 @@ GameObject:
   - component: {fileID: 1739607251}
   - component: {fileID: 1739607253}
   - component: {fileID: 1739607254}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Square (4)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -5201,7 +5201,7 @@ GameObject:
   - component: {fileID: 1753579372}
   - component: {fileID: 1753579374}
   - component: {fileID: 1753579375}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Square (5)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -5469,7 +5469,7 @@ GameObject:
   - component: {fileID: 1820413288}
   - component: {fileID: 1820413290}
   - component: {fileID: 1820413291}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Square (8)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -5674,7 +5674,7 @@ GameObject:
   - component: {fileID: 1881412858}
   - component: {fileID: 1881412859}
   - component: {fileID: 1881412860}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Door (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6006,7 +6006,7 @@ GameObject:
   - component: {fileID: 2003341127}
   - component: {fileID: 2003341128}
   - component: {fileID: 2003341129}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6136,7 +6136,7 @@ GameObject:
   - component: {fileID: 2034546356}
   - component: {fileID: 2034546358}
   - component: {fileID: 2034546359}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Square (3)
   m_TagString: Wall
   m_Icon: {fileID: 0}

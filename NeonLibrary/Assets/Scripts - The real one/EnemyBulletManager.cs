@@ -115,7 +115,7 @@ public class EnemyBulletManager : MonoBehaviour
         float baseAngle = Mathf.Atan2(directionToPlayer.y, directionToPlayer.x) * Mathf.Rad2Deg;
 
         // Adjust this value to space bullets further apart
-        float bulletSpreadDistance = 0.5f;  // Increase this value to space bullets further apart
+        float bulletSpreadDistance = 1f;  // Increase this value to space bullets further apart
 
         for (int i = 0; i < numBullets; i++)
         {
