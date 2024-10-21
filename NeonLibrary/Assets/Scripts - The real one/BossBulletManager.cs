@@ -33,6 +33,7 @@ public class BossBulletManager : MonoBehaviour
     // Fire different bullet patterns (all aimed in the player's general direction)
     void FireBulletPattern()
     {
+        
         int rnd = Random.Range(0, 5);  // Increased the range to include new patterns
         switch (rnd)
         {

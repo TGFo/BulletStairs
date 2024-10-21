@@ -32,6 +32,7 @@ public class EnemyBulletManager : MonoBehaviour
     // Fire different bullet patterns (all aimed in the player's general direction)
     void FireBulletPattern()
     {
+        
         int rnd = Random.Range(0, 3);
         switch (rnd)
         {

@@ -23,9 +23,11 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         spawnPoint = new Vector2(transform.position.x, transform.position.y);
+        AudioManager.instance.AddSFXClip("Bullet", AudioManager.instance.audioClips[2]);
+        AudioManager.instance.PlaySFX("Bullet", 0.1f, 1, false);
 
-        
-        
+
+
     }
 
 

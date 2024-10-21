@@ -56,7 +56,8 @@ public class MapUI : MonoBehaviour
     }
     public void Start()
     {
-        
+        AudioManager.instance.AddBGMClip("MenuAudio", AudioManager.instance.audioClips[0]);
+        AudioManager.instance.PlayBGM("MenuAudio", 0.5f, true);
         resourceSelectCanvas.SetActive(false);
         shopCanvas.SetActive(false);
         mapCanvas.SetActive(true);

@@ -5,6 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;  // Singleton pattern
+    public AudioClip[] audioClips;
 
     [Header("Audio Sources")]
     public AudioSource sfxSource;     // AudioSource for sound effects

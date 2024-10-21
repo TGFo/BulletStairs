@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("World");
+        
     }
 
     // Function to quit the game

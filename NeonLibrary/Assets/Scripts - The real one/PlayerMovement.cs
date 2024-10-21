@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net.Security;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,6 +30,10 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();  // Get the Rigidbody2D component attached to the GameObject
+        for(int i =0; i<=3;i++)
+        {
+            PlayerManager.instance.roomOpen[i].SetActive(false);
+        }
     }
 
     void Update()
@@ -76,9 +81,12 @@ public class PlayerMovement : MonoBehaviour
         if (rb.velocity.magnitude >= animThresholdSpeed )
         {
             animator.SetBool("isMoving", true);
-        }else
+            
+        }
+        else
         {
             animator.SetBool("isMoving", false);
+            
         }
         //rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
@@ -115,6 +123,8 @@ public class PlayerMovement : MonoBehaviour
                     PlayerManager.instance.camChanges[0].SetActive(false);
                     PlayerManager.instance.mainCamera.transform.position = new Vector3(70.15f, 0, -10);
                     doorUnlock.doorRelock[0] = true;
+                    //PlayerManager.instance.roomClosed[0].SetActive(false);
+                    //PlayerManager.instance.roomOpen[0].SetActive(false);
                     doorUnlock.doors[0].SetActive(true);
                     
 
@@ -123,21 +133,30 @@ public class PlayerMovement : MonoBehaviour
                     PlayerManager.instance.camChanges[1].SetActive(false);
                     PlayerManager.instance.mainCamera.transform.position = new Vector3(140.24f, 0, -10);
                     doorUnlock.doorRelock[1] = true;
+                    //PlayerManager.instance.roomClosed[1].SetActive(false);
+                    //PlayerManager.instance.roomOpen[1].SetActive(false);
                     doorUnlock.doors[1].SetActive(true);
                     break;
                 case 3:
                     PlayerManager.instance.camChanges[2].SetActive(false);
                     PlayerManager.instance.mainCamera.transform.position = new Vector3(140.24f, 39.2f, -10);
                     doorUnlock.doorRelock[2] = true;
+                    //PlayerManager.instance.roomClosed[2].SetActive(false);
+                    //PlayerManager.instance.roomOpen[2].SetActive(false);
                     doorUnlock.doors[2].SetActive(true);
                     break;
                 case 4:
+
                     PlayerManager.instance.camChanges[3].SetActive(false);
                     PlayerManager.instance.camChanges[4].SetActive(false);
                     PlayerManager.instance.mainCamera.transform.position = new Vector3(140.24f, 98.2f, -10);
                     PlayerManager.instance.camera.orthographicSize = 40;
                     doorUnlock.doorRelock[3] = true;
                     doorUnlock.doorRelock[4] = true;
+                    //PlayerManager.instance.roomClosed[3].SetActive(false);
+                    //PlayerManager.instance.roomOpen[3].SetActive(false);
+                    //PlayerManager.instance.roomClosed[4].SetActive(false);
+                    //PlayerManager.instance.roomOpen[4].SetActive(false);
                     doorUnlock.doors[3].SetActive(true);
                     doorUnlock.doors[4].SetActive(true);
                     break;

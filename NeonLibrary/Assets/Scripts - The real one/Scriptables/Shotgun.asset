@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: ShotGun
   description: spreadshot
   fireRate: 1
-  projectileSpeed: 200
+  projectileSpeed: 100
   damage: 5
   value: 0
   bulletSprite: {fileID: 0}

@@ -16,6 +16,12 @@ public class LevelUI : MonoBehaviour
     public TMP_Text foodPickedUpTxt;
     public TMP_Text waterPickedUpTxt;
     public Button noButton;
+
+    private void Start()
+    {
+        AudioManager.instance.AddBGMClip("GameAudio", AudioManager.instance.audioClips[1]);
+        AudioManager.instance.PlayBGM("GameAudio", 0.05f, true);
+    }
     // Update is called once per frame
     void Update()
     {

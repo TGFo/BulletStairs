@@ -8,6 +8,7 @@ public class EnemyBullet : MonoBehaviour
 
     void Start()
     {
+        
         Destroy(gameObject,10);
     }
 

@@ -1447,10 +1447,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67a05f4f35bd00e428a2fd33f345a944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 7796e6fb12bcdb845b747c459f142542, type: 3}
+  - {fileID: 8300000, guid: a50e5acf787339f49a387a8c639513bb, type: 3}
+  - {fileID: 8300000, guid: 5c57fdc7adc46384ba826c477b6c05ed, type: 3}
   sfxSource: {fileID: 325829956}
   bgmSource: {fileID: 325829955}
   sfxVolume: 1
-  bgmVolume: 1
+  bgmVolume: 0.5
 --- !u!4 &325829958
 Transform:
   m_ObjectHideFlags: 0

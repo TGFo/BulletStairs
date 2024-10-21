@@ -11,6 +11,8 @@ public class PlayerManager : MonoBehaviour
     public List<Weapon> HeldWeapons = new List<Weapon>();
     public static PlayerManager instance;
     public GameObject[] camChanges = new GameObject[5];
+    public GameObject[] roomClosed = new GameObject[5];
+    public GameObject[] roomOpen = new GameObject[5];
     
     public GameObject mainCamera;
     public Camera camera;
