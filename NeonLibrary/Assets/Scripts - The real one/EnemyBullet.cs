@@ -17,11 +17,10 @@ public class EnemyBullet : MonoBehaviour
         // Check if the bullet hits the player or any object with health
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerStats playerStats = collision.gameObject.GetComponent<PlayerStats>();
-            if (playerStats != null)
-            {
-                playerStats.health--;  // Deal damage to the player
-            }
+            
+            
+                PlayerManager.instance.playerStats.health--;  // Deal damage to the player
+            
             Destroy(gameObject);  // Destroy the bullet on impact
         }
         else if (collision.gameObject.CompareTag("Wall"))

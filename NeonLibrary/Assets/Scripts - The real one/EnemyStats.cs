@@ -28,6 +28,8 @@ public class EnemyStats : MonoBehaviour
     void Die()
     {
         // You can add an explosion effect or some death animation here
+        EnemyManager.instance.enemiesKilled++;
+        EnemyManager.instance.enemySpawned = false;
         Destroy(gameObject);  // Destroy the enemy object when it dies
     }
 }

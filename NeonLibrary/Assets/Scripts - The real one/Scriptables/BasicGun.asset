@@ -16,6 +16,6 @@ MonoBehaviour:
   description: shoots
   fireRate: 0.13
   projectileSpeed: 100
-  damage: 2
+  damage: 100
   value: 0
   bulletSprite: {fileID: 0}

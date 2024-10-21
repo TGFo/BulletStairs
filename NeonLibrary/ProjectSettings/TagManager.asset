@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Wall
+  - CamChange
   layers:
   - Default
   - TransparentFX

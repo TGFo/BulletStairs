@@ -10,6 +10,13 @@ public class PlayerManager : MonoBehaviour
     public PlayerStats playerStats;
     public List<Weapon> HeldWeapons = new List<Weapon>();
     public static PlayerManager instance;
+    public GameObject[] camChanges = new GameObject[5];
+    
+    public GameObject mainCamera;
+    public Camera camera;
+
+
+
     private void Awake()
     {
         if (instance == null)
@@ -53,10 +60,14 @@ public class PlayerManager : MonoBehaviour
     {
         HeldWeapons.Add(weapon);
     }
+    
+    
     public void PickUpItems(int food, int water, int cash)
     {
         playerFood += food;
         playerWater += water;
         playerCash += cash;
     }
+
+    
 }

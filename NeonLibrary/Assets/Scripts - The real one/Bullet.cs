@@ -23,6 +23,7 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         spawnPoint = new Vector2(transform.position.x, transform.position.y);
+        
     }
 
 
@@ -56,7 +57,7 @@ public class Bullet : MonoBehaviour
             EnemyStats enemyStats = collision.gameObject.GetComponent<EnemyStats>();
             if(enemyStats != null)
             {
-                enemyStats.TakeDamage(damage);
+                enemyStats.TakeDamage(100);
             }
             
             Destroy(gameObject);

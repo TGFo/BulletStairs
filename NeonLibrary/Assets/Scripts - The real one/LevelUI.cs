@@ -39,7 +39,7 @@ public class LevelUI : MonoBehaviour
                 heartfill2.SetActive(false);
                 heartfill1.SetActive(true);
                 break;
-            case 0:
+            case <= 0:
                 heartfill1.SetActive(false);
                 SceneManager.LoadScene("World");
                 ResourceManager.instance.NextDay();
