@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    public float bulletLifetime = 5f;  // How long the bullet lasts before being destroyed
+     // How long the bullet lasts before being destroyed
 
     void Start()
     {
-        // Destroy the bullet after a certain time to avoid memory leaks
-        Destroy(gameObject, bulletLifetime);
+        Destroy(gameObject,10);
     }
 
     void OnCollisionEnter2D(Collision2D collision)

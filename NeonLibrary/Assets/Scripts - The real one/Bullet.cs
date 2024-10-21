@@ -23,6 +23,8 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         spawnPoint = new Vector2(transform.position.x, transform.position.y);
+
+        
         
     }
 
@@ -57,11 +59,22 @@ public class Bullet : MonoBehaviour
             EnemyStats enemyStats = collision.gameObject.GetComponent<EnemyStats>();
             if(enemyStats != null)
             {
-                enemyStats.TakeDamage(100);
+                enemyStats.TakeDamage(damage);
             }
             
             Destroy(gameObject);
             
+        }
+        if (collision.gameObject.CompareTag("Boss"))
+        {
+            EnemyStats enemyStats = collision.gameObject.GetComponent<EnemyStats>();
+            if (enemyStats != null)
+            {
+                enemyStats.TakeDamage(Mathf.FloorToInt(Mathf.FloorToInt(damage/2)));
+            }
+
+            Destroy(gameObject);
+
         }
         else if (collision.gameObject.CompareTag("Wall"))
         {

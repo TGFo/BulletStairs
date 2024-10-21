@@ -15,6 +15,8 @@ public class MapUI : MonoBehaviour
     public TMP_Text cashText;
     public GameObject mapCanvas;
     public GameObject resourceSelectCanvas;
+    public GameObject shopCanvas;
+    public Button shotgunBtn;
     public TMP_Text validCheckTxt;
     public int foodInputNumber;
     public int waterInputNumber;
@@ -25,6 +27,14 @@ public class MapUI : MonoBehaviour
     public void ResourceSelection()
     {
         resourceSelectCanvas.SetActive(true);
+        if (ResourceManager.instance.shotgunUnlocked == true)
+        {
+            shotgunBtn.enabled = true;
+        }
+        else
+        {
+            shotgunBtn.enabled = false;
+        }
         mapCanvas.SetActive(false);
 
     }
@@ -46,15 +56,31 @@ public class MapUI : MonoBehaviour
     }
     public void Start()
     {
+        
         resourceSelectCanvas.SetActive(false);
+        shopCanvas.SetActive(false);
         mapCanvas.SetActive(true);
-        foodTxt.text = foodTxt.text + ResourceManager.instance.globalFood.ToString();
-        waterTxt.text = waterTxt.text + ResourceManager.instance.globalWater.ToString();
-        cashText.text = cashText.text + ResourceManager.instance.globalCash.ToString();
+        
         
     }
     private void Update()
     {
+        foodTxt.text = ResourceManager.instance.globalFood.ToString();
+        waterTxt.text = ResourceManager.instance.globalWater.ToString();
+        cashText.text =ResourceManager.instance.globalCash.ToString();
+        if (Input.GetKeyDown(KeyCode.S)) 
+        { 
+            mapCanvas.SetActive(false);
+            resourceSelectCanvas.SetActive(false);
+            shopCanvas.SetActive(true);
+            
+        }
+    }
+    public void ConfirmPurchase()
+    {
         
+        mapCanvas.SetActive(true);
+        resourceSelectCanvas.SetActive(false);
+        shopCanvas.SetActive(false);
     }
 }

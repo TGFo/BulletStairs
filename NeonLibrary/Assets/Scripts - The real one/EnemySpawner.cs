@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;  // Reference to the enemy prefab
+    public GameObject bossPrefab;
     public float spawnDelay = 3f;   // Delay in seconds before spawning an enemy
     
     void Start()
@@ -64,7 +65,7 @@ public class EnemySpawner : MonoBehaviour
                 Instantiate(enemyPrefab, EnemyManager.instance.enemySpawns[3].transform.position, Quaternion.identity);
                 break;
             case 4:
-                Instantiate(enemyPrefab, EnemyManager.instance.enemySpawns[4].transform.position, Quaternion.identity);
+                Instantiate(bossPrefab, EnemyManager.instance.enemySpawns[4].transform.position, Quaternion.identity);
                 break;
             default:
                 break;
