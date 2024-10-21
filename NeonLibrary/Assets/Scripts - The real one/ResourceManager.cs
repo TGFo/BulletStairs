@@ -12,6 +12,7 @@ public class ResourceManager : MonoBehaviour
     public int carriedFood;
     public int carriedWater;
     public Weapon carriedWeapon;
+    public bool shotgunUnlocked;
     public List<Weapon> AvailableWeapons = new List<Weapon>();
     public static ResourceManager instance;
     public int daysPassed;
@@ -38,7 +39,7 @@ public class ResourceManager : MonoBehaviour
     {
         if( globalFood < 0 || globalWater < 0)
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("GameOver");
             Destroy(gameObject);
         }
     }

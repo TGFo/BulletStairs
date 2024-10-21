@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Security;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
@@ -9,10 +11,11 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;  // Speed of movement
     public float dashSpeed = 12f;            // Speed when dashing
     public float dashDuration = 0.5f;        // Duration of the dash in seconds
-    public float dashCooldown = 1.0f;
+    public float dashCooldown = 3.0f;
 
     private Rigidbody2D rb;
     private Vector2 movement;
+    public Collider2D playerCollider;
     public Animator animator;
     public float animThresholdSpeed = 1.0f;
 
@@ -20,6 +23,9 @@ public class PlayerMovement : MonoBehaviour
     public float dashTime;                  // Timer to track dash duration
     public float dashCooldownTime;
     public DoorUnlock doorUnlock;
+    public TMP_Text dashTimerTxt;
+    public GameObject dashIcon;
+    public Transform characterTransform;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();  // Get the Rigidbody2D component attached to the GameObject
@@ -34,17 +40,21 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) && movement != Vector2.zero && Time.time >= dashCooldownTime)
         {
             isDashing = true;
+            animator.SetBool("isDashing", true);
             dashTime = Time.time + dashDuration;       // Set the dash duration
             dashCooldownTime = Time.time + dashCooldown;  // Set the dash cooldown
+            playerCollider.enabled = false;
         }
+
+        UpdateDashCooldownUI();
 
         if (rb.velocity.x <= -animThresholdSpeed)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            characterTransform.localScale = new Vector3(-1, 1, 1);
         }
         else if (rb.velocity.x >= animThresholdSpeed)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            characterTransform.localScale = new Vector3(1, 1, 1);
         }
     }
 
@@ -59,7 +69,9 @@ public class PlayerMovement : MonoBehaviour
         {
             // Regular movement
             rb.AddForce(movement * moveSpeed);
+            playerCollider.enabled = true;
             isDashing = false; // Stop dashing once the dash time is over
+            animator.SetBool("isDashing", false);
         }
         if (rb.velocity.magnitude >= animThresholdSpeed )
         {
@@ -70,6 +82,26 @@ public class PlayerMovement : MonoBehaviour
         }
         //rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
+
+    private void UpdateDashCooldownUI()
+    {
+        // Calculate the remaining cooldown time
+        float remainingCooldown = dashCooldownTime - Time.time;
+
+        // If the cooldown is still active, display the remaining time as an integer
+        if (remainingCooldown > 0)
+        {
+            dashIcon.SetActive(false);
+            dashTimerTxt.text = Mathf.CeilToInt(remainingCooldown).ToString();
+        }
+        else
+        {
+            // Clear the cooldown text when the dash is ready
+            dashTimerTxt.text = "";
+            dashIcon.SetActive(true);
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("CamChange"))

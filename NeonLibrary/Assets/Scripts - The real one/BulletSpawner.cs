@@ -32,6 +32,7 @@ public class BulletSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
 
@@ -61,16 +62,53 @@ public class BulletSpawner : MonoBehaviour
     public void Fire()
     {
         Bullet firedBullet;
-        if (bullet)
+        if (ResourceManager.instance.carriedWeapon.name== "BasicGun")
         {
-            spawnedBullet = Instantiate(bullet, transform.position, Quaternion.identity);
-            firedBullet = spawnedBullet.GetComponent<Bullet>();
-            firedBullet.speed = speed;
-            firedBullet.bulletLife = bulletLife;
-            firedBullet.damage = damage;
-            spawnedBullet.transform.rotation = transform.rotation;
-            firedBullet.playerSpeed = rb.velocity;
-            firedBullet.OnBulletFired();
+            
+            if (bullet)
+            {
+                spawnedBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+                firedBullet = spawnedBullet.GetComponent<Bullet>();
+                firedBullet.speed = speed;
+                firedBullet.bulletLife = bulletLife;
+                firedBullet.damage = damage;
+                spawnedBullet.transform.rotation = transform.rotation;
+                firedBullet.playerSpeed = rb.velocity;
+                firedBullet.OnBulletFired();
+            }
         }
+        else if(ResourceManager.instance.carriedWeapon.name == "Shotgun")
+        {
+            int numberOfBullets = 5;  // Number of bullets (pellets) in the shotgun blast
+            float spreadAngle = 15f;  // Spread angle (in degrees)
+
+            for (int i = 0; i < numberOfBullets; i++)
+            {
+                if (bullet)
+                {
+                    // Instantiate a bullet for each pellet in the shotgun blast
+                    spawnedBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+                    firedBullet = spawnedBullet.GetComponent<Bullet>();
+
+                    // Calculate random spread
+                    float angleOffset = Random.Range(-spreadAngle / 2f, spreadAngle / 2f);
+
+                    // Rotate the bullet by the spread angle
+                    spawnedBullet.transform.rotation = Quaternion.Euler(new Vector3(0, 0, transform.eulerAngles.z + angleOffset));
+
+                    // Assign the bullet's speed, life, and damage
+                    firedBullet.speed = speed;
+                    firedBullet.bulletLife = bulletLife;
+                    firedBullet.damage = damage;
+
+                    // Set the player's speed as bullet velocity factor
+                    firedBullet.playerSpeed = rb.velocity;
+
+                    // Trigger the bullet's firing logic
+                    firedBullet.OnBulletFired();
+                }
+            }
+        }
+        
     }
 }

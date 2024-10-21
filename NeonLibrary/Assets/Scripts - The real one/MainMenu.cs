@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     // Function to start the game
     public void StartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("World");
     }
 
     // Function to quit the game

@@ -136,7 +136,7 @@ MonoBehaviour:
   speed: 1
   rb: {fileID: 6986219165379020256}
   playerSpeed: {x: 0, y: 0}
-  damage: 100
+  damage: 2
 --- !u!50 &6986219165379020256
 Rigidbody2D:
   serializedVersion: 4

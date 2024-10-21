@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelUI : MonoBehaviour
 {
@@ -10,22 +11,37 @@ public class LevelUI : MonoBehaviour
     public GameObject heartfill3;
     public GameObject heartfill2;
     public GameObject heartfill1;
+    public GameObject extractMenu;
+    public TMP_Text cashPickedUpTxt;
+    public TMP_Text foodPickedUpTxt;
+    public TMP_Text waterPickedUpTxt;
+    public Button noButton;
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (PlayerManager.instance.playerStats.health < 3 && PlayerManager.instance.playerStats.health > 0)
+            if (PlayerManager.instance.playerStats.health < 3 && PlayerManager.instance.playerStats.health > 0 && PlayerManager.instance.playerFood >0)
             {
                 PlayerManager.instance.playerStats.health++;
-                ResourceManager.instance.carriedFood--;
+                PlayerManager.instance.playerFood--;
             }
         }
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.E) || EnemyManager.instance.enemiesKilled ==5)
         {
-                PlayerManager.instance.playerStats.health--;
+                Time.timeScale = 0;
+                extractMenu.SetActive(true);
+                if(EnemyManager.instance.enemiesKilled == 5)
+                {
+                noButton.interactable = false;
+                }
+                
         }
-        foodAmountTxt.text ="" + ResourceManager.instance.carriedFood;
+        if(extractMenu.activeSelf)
+        {
+            ResourceDisplay();
+        }
+        foodAmountTxt.text ="" + PlayerManager.instance.playerFood;
         switch(PlayerManager.instance.playerStats.health)
         {
             case 3:
@@ -49,5 +65,21 @@ public class LevelUI : MonoBehaviour
                 break;
 
         }
+    }
+    public void ResourceDisplay()
+    {
+        cashPickedUpTxt.text = PlayerManager.instance.playerCash.ToString();
+        foodPickedUpTxt.text = PlayerManager.instance.playerFood.ToString();
+        waterPickedUpTxt.text = PlayerManager.instance.playerWater.ToString();
+    }
+    public void Yes()
+    {
+        PlayerManager.instance.Extract();
+        SceneManager.LoadScene("World");
+    }
+    public void No()
+    {
+        Time.timeScale = 1;
+        extractMenu.SetActive(false);
     }
 }

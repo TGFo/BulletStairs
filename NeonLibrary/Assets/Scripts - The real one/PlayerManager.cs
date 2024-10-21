@@ -32,6 +32,7 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         playerFood = ResourceManager.instance.carriedFood;
         playerWater = ResourceManager.instance.carriedWater;
         HeldWeapons.Add(ResourceManager.instance.carriedWeapon);
@@ -45,8 +46,8 @@ public class PlayerManager : MonoBehaviour
     }
     public void Extract()
     {
-        ResourceManager.instance.globalFood += playerFood + ResourceManager.instance.carriedFood;
-        ResourceManager.instance.globalWater += playerWater + ResourceManager.instance.carriedWater;
+        ResourceManager.instance.globalFood += playerFood;
+        ResourceManager.instance.globalWater += playerWater;
         ResourceManager.instance.globalCash += playerCash;
         ResourceManager.instance.AvailableWeapons.AddRange(HeldWeapons);
         ResourceManager.instance.NextDay();

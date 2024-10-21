@@ -6,8 +6,7 @@ public class EnemyStats : MonoBehaviour
 {
     public int maxHealth = 100;  // Enemy's maximum health
     public int currentHealth;    // Enemy's current health
-    public int damage = 10;      // Damage the enemy can deal (if relevant)
-
+    public GameObject pickupPrefab;
     void Start()
     {
         currentHealth = maxHealth;  // Initialize the enemy's health
@@ -20,6 +19,7 @@ public class EnemyStats : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            Instantiate(pickupPrefab, this.gameObject.transform.position, Quaternion.identity);
             Die();  // Call the die function if health is 0
         }
     }
